@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#wrapper{
+    height: 100vh;
+    width: 100%;
+    background-image: url(gradient-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.game-info{
+    position: absolute;
+    top: 3rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 3rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.winner-count-x{
+    position: absolute;
+    top: 3rem;
+    left: 10%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 3rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+.winner-count-o{
+    position: absolute;
+    top: 3rem;
+    right: 10%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 3rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.tic-tac-toe{
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 2rem;
+    display: grid;
+    width: 90%;
+    max-width: 20rem;
+    aspect-ratio: 1/1;
+    grid-template-columns: repeat(3, 1fr) ;
+    padding: 2rem;
+}
+
+.box{
+    position: relative;
+    display: flex;
+    aspect-ratio: 1/1;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 3rem;
+    width: 100%;
+}
+
+.box1, .box2, .box4, .box5{
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.box3, .box6{
+    border-bottom: 2px solid white;
+}
+
+.box7, .box8{
+    border-right: 2px solid white;
+}
+
+.btn{
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 2rem;
+    color: #fff;
+    padding: 0.5rem 2rem;
+    position: absolute;
+    bottom: 3rem;
+    display: none;
+    cursor: pointer;
+}
+
+.active{
+    display: flex;
+}
+
+.win{
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+
+@media only screen and (max-width:800px){
+    .winner-count-x{
+        left: 50%;
+        top: 3rem;
+        transform: translateX(-50%);
+        padding: 0.5rem 2rem;
+    }
+    .winner-count-o{
+        right: 50%;
+        top: 7rem;
+        transform: translateX(+50%);
+        padding: 0.5rem 2rem;
+    }
+
+    .game-info{
+        top: 11rem;
+        padding: 0.5rem 2rem;
+    }
+    .tic-tac-toe{
+        margin-top: 8rem;
+    }
+    .btn{
+        bottom: 2rem;
+    }
+    .box{
+        font-size: 2rem;
+    }
+
+}
