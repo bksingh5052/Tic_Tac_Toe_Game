@@ -6,6 +6,7 @@ let x_counter = document.querySelector(".winner-count-x");
 
 let currentPlayer;
 let gameGrid;
+let answer = "";
 const winningPosition = [
     [0,1,2],
     [0,4,8],
@@ -18,7 +19,7 @@ const winningPosition = [
 ];
 
 function initGame(){
-    currentPlayer = "X";
+    currentPlayer = answer || "X";
     gameGrid = ["","","","","","","","",""];
     boxes.forEach((box,index)=>{
         boxes[index].innerText = "";
@@ -52,7 +53,7 @@ let x_win = 0;
 let o_win = 0;
 
 function checkGameOver(){
-    let answer = "";
+    
     winningPosition.forEach((postion) =>{
         if( (gameGrid[postion[0]] !== "" || gameGrid[postion[1]] !== "" || gameGrid[postion[2]] !== "") 
             && (gameGrid[postion[0]] === gameGrid[postion[1]]) 
@@ -113,6 +114,7 @@ function checkGameOver(){
     })
 
     if(fillCount ===9){
+        answer = currentPlayer
         gameInfo.innerText = `Game tied`;
         newGameBtn.classList.add("active");
     }
